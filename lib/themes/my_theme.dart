@@ -29,11 +29,38 @@ class MyTheme with ChangeNotifier {
   ThemeData get currentThemeData {
     switch (themeType) {
       case ThemeType.Light:
-        return ThemeData();
+        return ThemeData(
+            primaryColor: Colors.white,
+            appBarTheme: AppBarTheme(backgroundColor: Colors.white),
+            textTheme: TextTheme(
+              headline3: TextStyle(color: Colors.black),
+              subtitle1: TextStyle(color: Colors.black),
+              subtitle2: TextStyle(color: Colors.black),
+              bodyText1: TextStyle(color: Colors.black),
+              bodyText2: TextStyle(color: Colors.black),
+            ));
       case ThemeType.Dark:
-        return ThemeData();
-      case ThemeType.Other:
-        return ThemeData();
+        return ThemeData(
+            primaryColor: Colors.grey[900],
+            appBarTheme: AppBarTheme(backgroundColor: Colors.grey[900]),
+            textTheme: TextTheme(
+              headline3: TextStyle(color: Colors.white),
+              subtitle1: TextStyle(color: Colors.white),
+              subtitle2: TextStyle(color: Colors.white),
+              bodyText1: TextStyle(color: Colors.white),
+              bodyText2: TextStyle(color: Colors.white),
+            ));
+      case ThemeType.Pride:
+        return ThemeData(
+            primaryColor: Colors.purple[900],
+            appBarTheme: AppBarTheme(backgroundColor: Colors.purple[900]),
+            textTheme: TextTheme(
+              headline3: TextStyle(color: Colors.red),
+              subtitle1: TextStyle(color: Colors.yellow),
+              subtitle2: TextStyle(color: Colors.green),
+              bodyText1: TextStyle(color: Colors.blueAccent),
+              bodyText2: TextStyle(color: Colors.purple),
+            ));
     }
   }
 }
@@ -41,5 +68,5 @@ class MyTheme with ChangeNotifier {
 enum ThemeType {
   Light,
   Dark,
-  Other,
+  Pride,
 }

@@ -22,12 +22,18 @@ class _SceneryState extends State<Scenery> {
         children: [
           CustomPaint(
             foregroundPainter: SceneryPainter(
-              skyColor: CustomWidgetThemes.of(context).sceneryThemeData!.skyFillColor,
-              waterColor: CustomWidgetThemes.of(context).sceneryThemeData!.waterFillColor,
-              mountainColor: CustomWidgetThemes.of(context).sceneryThemeData!.mountainFillColor,
+              skyColor:
+                  CustomWidgetThemes.of(context).sceneryThemeData!.skyFillColor,
+              waterColor: CustomWidgetThemes.of(context)
+                  .sceneryThemeData!
+                  .waterFillColor,
+              mountainColor: CustomWidgetThemes.of(context)
+                  .sceneryThemeData!
+                  .mountainFillColor,
               textHeight: _textAreaHeight,
               drawSun: CustomWidgetThemes.of(context).sceneryThemeData!.drawSun,
-              drawMoon: CustomWidgetThemes.of(context).sceneryThemeData!.drawMoon,
+              drawMoon:
+                  CustomWidgetThemes.of(context).sceneryThemeData!.drawMoon,
             ),
             child: Container(),
           ),
@@ -35,6 +41,7 @@ class _SceneryState extends State<Scenery> {
           Positioned(
             bottom: 0,
             child: Container(
+              color: Theme.of(context).primaryColor,
               height: _textAreaHeight,
               width: constraints.maxWidth,
               child: const SomeText(),
@@ -56,7 +63,8 @@ class _SceneryState extends State<Scenery> {
                         title: const Text('Light'),
                         groupValue: myTheme.themeType,
                         value: ThemeType.Light,
-                        onChanged: (ThemeType? mode) => myTheme.setThemeType(ThemeType.Light),
+                        onChanged: (ThemeType? mode) =>
+                            myTheme.setThemeType(ThemeType.Light),
                       ),
                     ),
                     Expanded(
@@ -65,16 +73,18 @@ class _SceneryState extends State<Scenery> {
                         title: const Text('Dark'),
                         groupValue: myTheme.themeType,
                         value: ThemeType.Dark,
-                        onChanged: (ThemeType? mode) => myTheme.setThemeType(ThemeType.Dark),
+                        onChanged: (ThemeType? mode) =>
+                            myTheme.setThemeType(ThemeType.Dark),
                       ),
                     ),
                     Expanded(
                       child: RadioListTile<ThemeType>(
                         contentPadding: EdgeInsets.symmetric(horizontal: 4),
-                        title: const Text('Other'),
+                        title: const Text('Pride'),
                         groupValue: myTheme.themeType,
-                        value: ThemeType.Other,
-                        onChanged: (ThemeType? mode) => myTheme.setThemeType(ThemeType.Other),
+                        value: ThemeType.Pride,
+                        onChanged: (ThemeType? mode) =>
+                            myTheme.setThemeType(ThemeType.Pride),
                       ),
                     ),
                   ],
@@ -106,7 +116,7 @@ class SomeText extends StatelessWidget {
         const SizedBox(height: 8),
         Text(
           'Hello, Flutter Friend!',
-          style: Theme.of(context).textTheme.bodyText1,
+          style: Theme.of(context).textTheme.subtitle2,
         ),
         Text(
           'Welcome to Flutter Challenge',
@@ -114,7 +124,7 @@ class SomeText extends StatelessWidget {
         ),
         Text(
           'We hope you have fun :)',
-          style: Theme.of(context).textTheme.bodyText1,
+          style: Theme.of(context).textTheme.bodyText2,
         ),
       ],
     );
